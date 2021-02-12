@@ -7,11 +7,11 @@ let howMany = Number(input.question(`How many letters should we remove from the 
 
 
 if (howMany <= str.length) {
-  let newString = str.slice(howMany,10).concat(str.slice(0,howMany));
-  console.log(`If you move the first ${howMany} characters of "${str}" to the end, it looks like "${newString}."`);
+  let newString = str.slice(howMany).concat(str.slice(0,howMany));
+  console.log(`\nIf you move the first ${howMany} characters of "${str}" to the end, it looks like "${newString}."`);
 } else {
-  let newString = str.slice(3,10).concat(str.slice(0,3));
-  console.log(`Error, Cannot Compute: ${howMany} is longer than the word "${str}."\nHowever, if you move the first 3 characters of "${str}" to the end, it looks like "${newString}."`);
+  let newString = str.slice(3).concat(str.slice(0,3));
+  console.log(`\nError, Cannot Compute: ${howMany} is longer than the word "${str}."\n\nHowever, if you move the first 3 characters of "${str}" to the end, it looks like "${newString}."`);
 }
 
 //Use a template literal to print the original and modified string in a descriptive phrase.
