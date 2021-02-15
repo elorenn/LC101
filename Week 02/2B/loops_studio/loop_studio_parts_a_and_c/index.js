@@ -11,11 +11,7 @@ let numMeals = 0;
 /*
 for (i = 0; i < 6; i++) {
   let mealOptions = [];
-  mealOptions.push(proteinOptions[i]);
-  mealOptions.push(grainOptions[i]);
-  mealOptions.push(vegetableOptions[i]);
-  mealOptions.push(beverageOptions[i]);
-  mealOptions.push(dessertOptions[i]);
+  mealOptions.push(proteinOptions[i],grainOptions[i],vegetableOptions[i],beverageOptions[i],dessertOptions[i]);  
   console.log(mealOptions);
 } */
 
