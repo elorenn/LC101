@@ -24,7 +24,7 @@ console.log(`\nWonderful! Here is their menu: \n\n        * * *   MENU  * * *   
 // with pantry:
 for (i = 0; i < numMeals; i++) {
   let mealOptions = [];
-  for (j = 0; j < 5; j++) {
+  for (j = 0; j < pantry.length; j++) {
     mealOptions.push(pantry[j][i]);
   }
   console.log(`\nMeal ${i + 1}: ${mealOptions.join(", ")}`);
