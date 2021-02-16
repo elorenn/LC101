@@ -28,6 +28,20 @@ function askQuestion() {
 
 function gradeQuiz(candidateAnswers) {
 
+  // let nameDisplay = `\n\t\t\t\t* * * RESULTS * * *\n\nCandidate Name: ${candidateName}`; 
+  // let gradeDisplay = `\n>>> Overall Grade: 40% (2 of 5 responses correct) <<<\n>>> Status: FAILED <<<`; 
+  // function answersDisplay() {
+  //   for (i = 0; i < questions.length ; i++) {
+  //    let bees = `\n${i+1}) ${questions[i]}
+  // Your Answer: ${candidateAnswers[i]}
+  // Correct Answer: ${correctAnswers[i]}`;
+  //   console.log(bees);
+  //   }
+  // } 
+  // console.log(nameDisplay);
+  // console.log(answersDisplay()); // why is "undefined" after printout?
+  // console.log(gradeDisplay);
+
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
   
   console.log(`\n\t\t\t\t* * * RESULTS * * *\n\nCandidate Name: ${candidateName}`);
