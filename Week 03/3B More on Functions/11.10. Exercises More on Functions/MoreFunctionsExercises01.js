@@ -23,19 +23,19 @@ let cargoHold = ['meal kits', 'space suits', 'first-aid kit', 'satellite', 'gold
 
 console.log("Starting Fuel Level: " + fuelLevel);
 console.log("Fuel Level Status: " + checkFuel(fuelLevel));
+console.log(" ");
+console.log(`Cargo Hold: ` + cargoHold);
+console.log("Hold status: " + holdStatus(cargoHold));
+console.log(" ");
 
 /*
-C. First, steal some fuel from the shuttle:
-
-  a. Define an anonymous function and set it equal to a variable with a normal, non-suspicious name. The function takes one parameter. This will be the fuel level on the shuttle.
-
-  b. You must siphon off fuel without alerting the TAs. Inside your function, you want to reduce the fuel level as much as possible WITHOUT changing the color returned by the checkFuel function.
-
-  c. Once you figure out how much fuel to pump out, return that value. //99999
-
-  d. Decide where to best place your function call to gather our new fuel.
+First, steal some fuel from the shuttle.
+Then swipe two items from the cargo hold.
+Finally, you need to print a receipt for the accountant.
 */
 
+// leave this much fuel: 100001
+// steal this much fuel: 99999
 let notDoingAnythingBad = function(fuel) {
    if (checkFuel(fuel) === 'green') {
       return fuel - 100001;
@@ -48,24 +48,31 @@ let notDoingAnythingBad = function(fuel) {
    }
 };
 
-// leave this much fuel: 100001
-// steal this much fuel: 99999
-console.log('Steal This Much Fuel: ' + notDoingAnythingBad(fuelLevel));
-
-fuelLevel -= notDoingAnythingBad(fuelLevel);
-
-console.log("Fuel Level After Theft: " + fuelLevel);
-console.log("Fuel Level Status: " + checkFuel(fuelLevel));
-
+// replace stolen items to keep array length the same
 let nothingToSeeHere = function(items) {
   let stolenItems = [];
-  array = cargoHold.splice(3, 2, 'large rock', 'Arsène Lupin novel');
-  return items;
+  stolenItems = cargoHold.splice(3, 2, 'large rock', 'Arsène Lupin novel');
+  return stolenItems;
 }
+
+let irs = function(fuelLevel, cargoHold) {
+  let loot = nothingToSeeHere(cargoHold);
+  let stolenFuel = notDoingAnythingBad(fuelLevel);
+
+  fuelLevel -= notDoingAnythingBad(fuelLevel);
+
+  return `Raided ${stolenFuel}kg of fuel from the tanks, and stole ${loot[0]} and ${loot[1]} from the cargo hold.`;
+}
+
+let receipt = irs(fuelLevel, cargoHold);
+console.log(receipt);
+
+console.log(" ");
+console.log("Fuel Level After Theft: " + (fuelLevel -= notDoingAnythingBad(fuelLevel)));
+console.log("Fuel Level Status: " + checkFuel(fuelLevel));
+console.log(" ");
 
 console.log(`Cargo Hold: ` + cargoHold);
 console.log("Hold status: " + holdStatus(cargoHold));
-nothingToSeeHere(cargoHold);
-console.log(`Swipped Cargo Hold: ` + cargoHold);
-console.log("Hold status: " + holdStatus(cargoHold));
+console.log(" ");
 
