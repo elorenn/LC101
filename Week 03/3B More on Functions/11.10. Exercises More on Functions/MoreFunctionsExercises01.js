@@ -21,8 +21,8 @@ function holdStatus(arr){
 let fuelLevel = 200000;
 let cargoHold = ['meal kits', 'space suits', 'first-aid kit', 'satellite', 'gold', 'water', 'AE-35 unit'];
 
-console.log("Fuel level: " + checkFuel(fuelLevel));
-console.log("Hold status: " + holdStatus(cargoHold));
+console.log("Starting Fuel Level: " + fuelLevel);
+console.log("Fuel Level Status: " + checkFuel(fuelLevel));
 
 /*
 C. First, steal some fuel from the shuttle:
@@ -31,24 +31,12 @@ C. First, steal some fuel from the shuttle:
 
   b. You must siphon off fuel without alerting the TAs. Inside your function, you want to reduce the fuel level as much as possible WITHOUT changing the color returned by the checkFuel function.
 
-  c. Once you figure out how much fuel to pump out, return that value. //100001
+  c. Once you figure out how much fuel to pump out, return that value. //99999
 
   d. Decide where to best place your function call to gather our new fuel.
 */
 
-let notAThief = function(fuel) {
-  // console.log(fuel);
-  // console.log(checkFuel(fuel));
-  if (!(checkFuel(fuel) === 'green')) {
-    return fuel + 1;
-  } else {
-    return notAThief(fuel/2);
-  }
-}
-
-console.log('THIS: ' + notAThief(200000));
-
-let nonSuspiciousFunction = function(fuel) {
+let notDoingAnythingBad = function(fuel) {
    if (checkFuel(fuel) === 'green') {
       return fuel - 100001;
    }
@@ -60,9 +48,16 @@ let nonSuspiciousFunction = function(fuel) {
    }
 };
 
-console.log(nonSuspiciousFunction(fuelLevel));
+// leave this much fuel: 100001
+// steal this much fuel: 99999
+console.log('Steal This Much Fuel: ' + notDoingAnythingBad(fuelLevel));
 
-console.log(checkFuel(nonSuspiciousFunction(100001)));
+fuelLevel -= notDoingAnythingBad(fuelLevel);
 
-console.log(checkFuel(notAThief(100001)));
+console.log("Fuel Level After Theft: " + fuelLevel);
+console.log("Fuel Level Status: " + checkFuel(fuelLevel));
+
+
+
+
 
