@@ -57,7 +57,15 @@ fuelLevel -= notDoingAnythingBad(fuelLevel);
 console.log("Fuel Level After Theft: " + fuelLevel);
 console.log("Fuel Level Status: " + checkFuel(fuelLevel));
 
+let nothingToSeeHere = function(items) {
+  let stolenItems = [];
+  array = cargoHold.splice(3, 2, 'large rock', 'Arsène Lupin novel');
+  return items;
+}
 
-
-
+console.log(`Cargo Hold: ` + cargoHold);
+console.log("Hold status: " + holdStatus(cargoHold));
+nothingToSeeHere(cargoHold);
+console.log(`Swipped Cargo Hold: ` + cargoHold);
+console.log("Hold status: " + holdStatus(cargoHold));
 
