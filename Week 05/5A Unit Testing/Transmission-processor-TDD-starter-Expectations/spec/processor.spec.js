@@ -12,7 +12,7 @@ describe("transmission processor", function() {
   });
 
   //Return -1 if the transmission does NOT contain "::"
-  it("", function() {
+  it("Return -1 if the transmission does NOT contain ::", function() {
     let result = processor("9701:<489584872710>");
     expect(result).toEqual(-1);
   });
@@ -24,7 +24,7 @@ describe("transmission processor", function() {
   });
 
   //The id property should be of type Number
-   it('returns id in object', function () {
+   it('id property should be of type Number', function () {
     let result = processor("9701::<489584872710>");
     // expect(result.id).toEqual(9701);
     expect(typeof result.id).toEqual('number');
@@ -89,19 +89,19 @@ describe("transmission processor", function() {
   // there should be no trailing whitespace from transmission
   it('there should be no trailing whitespace from transmission', function(){
     let result = processor("9701::<487297403495720912>  ");
-    expect(result.rawData).toEqual('487297403495720912');
+    expect(result.rawData).toEqual(487297403495720912);
   });  
   
   // there should be no leading whitespace in rawData
   it('there should be no leading whitespace in rawData', function(){
     let result = processor("9701::  <487297403495720912>");
-    expect(result.rawData).toEqual('487297403495720912');
+    expect(result.rawData).toEqual(487297403495720912);
   });  
 
   // there should be no leading or trailing whitespace from transmission
   it('there should be no leading or trailing whitespace from transmission', function(){
     let result = processor("  9701::<487297403495720912>  ");
-    expect(result.rawData).toEqual('487297403495720912');
+    expect(result.rawData).toEqual(487297403495720912);
   });  
 
   //Return -1 if the id part of the transmission cannot be converted to a number.
@@ -129,11 +129,19 @@ describe("transmission processor", function() {
   //Do not include the < > symbols in the value assigned to rawData
   it('the < > symbols should not be included in the value assigned to rawData', function(){
     let result = processor("9701::<489584872710>");
-    expect(result.rawData).toEqual('489584872710');
+    expect(result.rawData).toEqual(489584872710);
   });
 
   //Return -1 for the value of rawData if anything besides numbers are present between the < > symbols.
-  it('', function(){
-    
+  it('only numbers should be present between < and > in rawData', function(){
+    let result = processor("9701::<48958#4872710>");
+    expect(result.rawData).toEqual(-1);
   });
+
+  //The rawData property should be of type Number
+   it('rawData property should be of type Number', function () {
+    let result = processor("9701::<489584872710>");
+    expect(typeof result.rawData).toEqual('number');
+  });
+
 }); 
