@@ -11,9 +11,9 @@ function launchOutput(num){
       output += ' Rocks';
     }
     output = output.trim() + '!'; 
-    if (num%2 === 0 && num%5 === 0 && num%3 !== 0) {
+    if (output === 'Launch Rocks!') {
       output += ' (CRASH!!!!)';
-    } 
+    }    
     return output;
   }
   return `Rutabagas! That doesn't work.`; 
