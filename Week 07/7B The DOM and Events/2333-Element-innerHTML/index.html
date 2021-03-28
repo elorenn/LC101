@@ -1,0 +1,22 @@
+<!-- 23.3.3. Element innerHTML -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM Examples</title>
+  </head>
+  <body>
+    <h1>innnerHTML Example</h1>
+    <h2>Yellow Fruits</h2>
+    <ul class="yellow">
+      <li>Banana</li>
+    </ul>
+    <script>
+      // The innerHTML property of elements reads and updates the HTML and or text that is inside the element.
+      let ul = document.querySelector(".yellow");
+      console.log(ul.innerHTML.trim());
+      // Add a <li> to the list
+      ul.innerHTML += "<li>Lemon</li>";
+      console.log(ul.innerHTML.trim());      
+    </script>
+  </body>
+</html>

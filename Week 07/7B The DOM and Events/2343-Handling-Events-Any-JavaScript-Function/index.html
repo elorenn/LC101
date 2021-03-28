@@ -1,0 +1,25 @@
+<!-- 23.4.3. Handling Events Any JavaScript Function -->
+
+<!-- Any JavaScript function can be used as the event handler. That means any defined functions can be used. Because programmers can write functions to do whatever their hearts desire, defined functions as event handlers allow for more functionality to occur when an event is handled. -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Button click handler</title>
+    <script>
+      // A function youRang() is defined and used as the event handler for when the button is clicked:
+      function youRang() {
+          document.getElementById("main-text").innerHTML += "you rang...";
+          console.log("you rang...");
+      }
+    </script>
+  </head>
+  <body>
+    <h1>demo header</h1>
+    <p id="main-text" class="orange" style="font-weight: bold;">
+      a bunch of really valuable text...
+    </p>
+    <button onclick="youRang();">Ring Bell</button>
+  </body>
+</html>
+<!-- When defining handlers via HTML, be very careful to type the function name correctly. If the function name is incorrect, the event will not be handled. No warning is given, the event is silently ignored. -->

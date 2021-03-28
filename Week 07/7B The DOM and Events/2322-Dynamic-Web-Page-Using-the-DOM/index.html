@@ -1,0 +1,20 @@
+<!-- 23.2.2. Dynamic Web Page Using the DOM -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Add content using DOM</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <p id="main-text">Words about things...</p>
+    <script>
+      // We can use document.getElementById and element.append to add text to a <p> tag:
+      let p = document.getElementById("main-text");
+      p.append(" more words about things.");
+      console.log(p.innerHTML);
+    </script>    
+  </body>
+</html>
+<!-- Notice the <script> tag is placed below the <p> tag in the HTML document. HTML documents are executed top down. Therefore, a <script> tag must come after any other elements that will be affected by the code inside the <script>. -->

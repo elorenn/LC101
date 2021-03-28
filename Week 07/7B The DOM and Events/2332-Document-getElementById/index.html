@@ -1,0 +1,19 @@
+<!-- 23.3.2. Document getElementById -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM Examples</title>
+  </head>
+  <body>
+    <h1>getElementById Example</h1>
+    <p id="description">
+      This will be turned blue.
+    </p>
+    <script>
+      // Searches the HTML document for an element that has an id attribute that matches the string parameter. Returns a reference to the matching element object if match found. If NO matching element is found, null is returned:
+      let paragraph = document.getElementById("description");
+      console.log("paragraph contents:", paragraph.innerHTML.trim());
+      paragraph.style.color = "blue";
+    </script>
+  </body>
+</html>

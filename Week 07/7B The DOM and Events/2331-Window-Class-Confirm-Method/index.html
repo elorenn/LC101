@@ -1,0 +1,29 @@
+<!-- 23.3.1. Window Class - Confirm Method-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>DOM Methods - Window Class - Confirm Method</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <p id="main-text"></p>
+    <script>
+      // Displays a dialog box with a message and returns true if user clicks "ok" and false if user clicks "cancel". 
+      let p = document.getElementById("main-text");
+      // let response = window.confirm("Would you like to play a game?");
+      // Remember that methods defined on window can be used without referencing the window variable:      
+      let response = confirm("Would you like to play a game?");      
+      // Code does NOT continue until user responds to confirm window
+      if (response) {
+        p.append("Let's play a board game!");
+      } else {
+        p.append("Oh well, let's code instead.");
+      }
+      console.log(p.innerHTML);
+    </script>
+  </body>
+</html>
+
+      
