@@ -1,0 +1,31 @@
+<!-- 23.6.1. Load Event -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Window Load Event</title>
+    <script>
+      // add load event handler to window
+      window.addEventListener("load", function() {
+        // put DOM code here to ensure elements have been loaded
+        console.log('window loaded');
+        let ring = document.getElementById("ring-button");
+        ring.addEventListener("click", function (event) {
+          console.log("ring ring");
+        });
+        let knock = document.getElementById("knock-button");
+        knock.addEventListener("click", function (event) {
+          console.log("knock knock");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="toolbar">
+      <button id="ring-button">Ring Bell</button>
+      <button id="knock-button">Knock on Door</button>
+    </div>
+  </body>
+</html>
+<!-- The DOM includes the load event, which is triggered when the window, elements, and resources have been loaded by the browser. Why is it important to know when things have loaded? Remember you can't interact with HTML elements in JavaScript unless they have been loaded into the DOM.
+
+Previously, we were moving the <script> element below any HTML elements that we needed to reference in the DOM. Using the load event on the global variable window is an alternative to <script> placement. When the load event has triggered on the window as a whole, we can know that all the elements are ready to be used. -->

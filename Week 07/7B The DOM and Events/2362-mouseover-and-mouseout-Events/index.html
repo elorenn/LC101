@@ -1,0 +1,27 @@
+<!-- 23.6.2. mouseover and mouseout Events -->
+<!-- the mouseover event, which is triggered when the mouse cursor enters an element. -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mouseover Event</title>
+    <script>
+      window.addEventListener("load", function() {
+        let list = document.getElementById("lane-list");
+        list.addEventListener("mouseover", function (event) {
+          let element = event.target;
+          element.innerHTML += ">";
+          console.log("target", element);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    Mouseover Race
+    <ul id="lane-list">
+      <li>Lane 1</li>
+      <li>Lane 2</li>
+      <li>Lane 3</li>
+    </ul>
+  </body>
+</html>
+<!-- Similarly, there is a mouseout event that is triggered when the cursor leaves a given element. -->

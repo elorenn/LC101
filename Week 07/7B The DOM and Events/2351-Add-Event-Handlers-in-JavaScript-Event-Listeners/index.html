@@ -1,0 +1,24 @@
+<!-- 23.5.1. Add Event Handlers in JavaScript - Event Listeners -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Use addEventListener</title>
+  </head>
+  <body>
+    <p id="main-text" class="orange" style="font-weight: bold;">
+      a bunch of really valuable text...
+    </p>
+    <button id="ring-button">Ring Bell</button>
+    <script>
+      function youRang() {
+        document.getElementById("main-text").innerHTML += "you rang...";
+        console.log("you rang...");
+      }
+      // Obtain a reference to the button element
+      let button = document.getElementById("ring-button");
+      //  Set the named function youRang as the click handler for the button element:
+      button.addEventListener("click", youRang);
+    </script>
+  </body>
+</html>
