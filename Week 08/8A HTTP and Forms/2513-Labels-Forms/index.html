@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form Example</title>
+  </head>
+  <body>
+      <!-- Forms normally contain more than one input. <label> tags are used to provide a textual label, which informs the user of the purpose of the field. The simplest usage of <label> tags is to wrap them around <input> tags. -->
+    <form>
+      <label>Username 
+        <input type="text" name="username"/>
+      </label>
+      <label>Team Name 
+        <input type="text" name="team"/>
+      </label>
+      <label>Subscribe to Newsletter
+        <input type="checkbox" name="newsletter"/>
+      </label>
+    </form>
+      <!-- A second way to relate a <label> tag to an <input> is to use the id attribute of input and the for attribute of label. The two are related by setting for in <label for="username"> equal to the id of <input id="username">, these two attributes must be EQUAL. When for is used, the <input> does NOT have to be inside of the <label>. -->
+    <form>
+      <label for="surname">Surname</label>
+      <input id="surname" name="surname" type="text"/>
+    </form>
+    <!-- The value attribute of an <input> tag can be used to set the default value. If the value attribute is declared, then the browser will show that value in the input. The user can choose to update the value by typing in the input box. -->
+    <form>
+      <label>Language 
+        <input name="language" type="text" value="JavaScript"/>
+      </label>
+    </form>  
+    <form>
+      <label>Username <input type="text" name="username"></label>
+      <!-- A form submission is triggered by clicking a button inside the form. A submit button can be an input element with type=submit or a button element. Clicking either of these will cause a form submission -->
+      <input type="submit"/>
+      <button>Submit!</button>
+    </form>
+    <!-- When a form is submitted, an HTTP request is sent to the location set in the action attribute of the <form> tag. If the action attribute is not present or is empty, then the form will submit to the URL of the current page. -->
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Form Example</title>
+    <style>
+      label {
+        display: block;
+        padding-bottom: 10px;
+      }
+      body {
+        padding: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Form will use default action value and submit form to current page. Type values into the inputs, click the Submit button, and notice what happens to the address bar. -->
+    <form action="">
+      <label>Username <input type="text" name="username"></label>
+      <label>Team Name <input type="text" name="team">
+      </label>
+      <button>Submit</button>
+    </form>
+
+    <p>WARNING: This ONLY works in <b>replit</b> if this "result" page is opened in its own window. Click the icon that shows a box with an arrow coming out of it.
+    </p>
+  </body>
+</html>
+
+<!-- When a form is submitted a key-value pair is created for each named input. The keys are the values of the name attributes, and they are paired with the content of the value attributes. 
+  
+The web address is the same as the form we loaded, but now includes a query parameter for every input, with a name, in the form. These parameters are known as the query string parameters.
+
+The form values are submitted via the query string because the default submission type for forms is GET. In the next section, we will soon learn how to submit form data via POST. 
+
+Data submitted by GET requests is less secure than POST because GET request URLs and the query parameters are cached and logged, possibly leaking sensitive data.-->
